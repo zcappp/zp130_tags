@@ -8,7 +8,7 @@ function render(ref) {
     }
     return <React.Fragment>
     {values.map((a, i) => <div key={i}><label>{a}</label><span onClick={() => del(ref, i)}>{svg.del}</span></div>)}
-    {!ref.editting ? <div className="newtag" onClick={() => toAdd(ref)}>{svg.add}<label>{ref.props.newtag || "new tag"}</label></div> : <input onBlur={e => add(ref, e.target.value)} className="zinput" autoComplete="off"/>}
+    {!ref.editting ? <div className="newtag" onClick={() => toAdd(ref)}>{svg.add}<label>{ref.props.newtag || "new tag"}</label></div> : <input onKeyDown={e => e.key == "Enter" && add(ref, e.target.value)} onBlur={e => add(ref, e.target.value)} className="zinput" autoComplete="off"/>}
     </React.Fragment>
 }
 
