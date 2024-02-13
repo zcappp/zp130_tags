@@ -5,7 +5,7 @@ module.exports = {
     mode: process.env.mode || "development",
     devtool: false,
     entry: {
-        "zp130": "./plugins/zp130_标签Tag.js",
+        "zp130": "./src/zp130_标签Tag.js",
     },
     output: {
         path: path.join(__dirname, "build/"),
